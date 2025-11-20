@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modal Suscripción</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <!-- ========== HEADER ========== -->
+    <header>
+        <h1>Mi Web</h1>
+
+        <nav>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="active">Inicio</a></li>
+                <li><a href="Sobre mí.html">Sobre mí</a></li>
+                <li><a href="Portafolio.html">Portafolio</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- ========== CONTENIDO ========== -->
+    <main>
+        <h2>Bienvenido</h2>
+        <p>Haz clic en el siguiente botón para ver el modal de suscripción.</p>
+
+        <!-- BOTÓN -->
+        <button class="btn-open">Abrir Modal</button>
+    </main>
+
+    <!-- ========== OVERLAY ========== -->
+    <div class="overlay hidden"></div>
+
+    <!-- ========== MODAL ========== -->
+    <div class="modal hidden">
+        <button class="close-modal">&times;</button>
+
+        <div class="modal-header">
+            <img src="https://cdn-icons-png.flaticon.com/512/147/147144.png" alt="Icono">
+        </div>
+
+        <h2>Mantente en Contacto</h2>
+        <p>Suscríbete para recibir noticias y contenido exclusivo.</p>
+
+        <input type="email" placeholder="tucorreo@gmail.com">
+
+        <button class="btn-submit">Suscribirse</button>
+
+        <footer>
+            <p>Al suscribirte aceptas nuestras <a href="#">políticas</a>.</p>
+        </footer>
+    </div>
+
+    <!-- ========== SCRIPT ========== -->
+    <script>
+        const btnOpen = document.querySelector(".btn-open");
+        const modal = document.querySelector(".modal");
+        const overlay = document.querySelector(".overlay");
+        const btnClose = document.querySelector(".close-modal");
+
+        btnOpen.addEventListener("click", () => {
+            modal.classList.remove("hidden");
+            overlay.classList.remove("hidden");
+        });
+
+        btnClose.addEventListener("click", () => {
+            modal.classList.add("hidden");
+            overlay.classList.add("hidden");
+        });
+
+        overlay.addEventListener("click", () => {
+            modal.classList.add("hidden");
+            overlay.classList.add("hidden");
+        });
+    </script>
+
+</body>
+</html>
